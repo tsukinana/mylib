@@ -2,9 +2,12 @@
 #-*-coding: utf-8-*-
 
 from logging import config
+from logging import getLogger
 import datetime
 import json
 import os
+
+
 
 with open (os.path.join(os.path.dirname(__file__),"../conf/log_config.json")) as f:
     log_name = "./" + datetime.datetime.now().strftime('%Y%m%d%H%M%S') + ".log"
@@ -12,3 +15,6 @@ with open (os.path.join(os.path.dirname(__file__),"../conf/log_config.json")) as
     log_conf = json.load(f)
     log_conf['handlers']['logFileHandler']['filename']=log_name
     config.dictConfig(log_conf)
+
+def org_get_logger(logger_name):
+    return getLogger(logger_name)
