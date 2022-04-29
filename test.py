@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 #-*-coding: utf-8-*-
 
-from loglib import org_get_logger
+from lib.log import org_get_logger
 import os
 
 logger = org_get_logger(__name__)    
