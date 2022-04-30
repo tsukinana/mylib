@@ -10,7 +10,7 @@ import os
 
 
 with open (os.path.join(os.path.dirname(__file__),"../conf/log_config.json")) as f:
-    log_name = "./" + datetime.datetime.now().strftime('%Y%m%d%H%M%S') + ".log"
+    log_name = os.path.join(os.path.dirname(__file__),"../logs/" + datetime.datetime.now().strftime('%Y%m%d_%H%M%S') + ".log")
     print(log_name)
     log_conf = json.load(f)
     log_conf['handlers']['logFileHandler']['filename']=log_name
